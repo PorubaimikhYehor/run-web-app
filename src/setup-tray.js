@@ -13,7 +13,11 @@ function setupTray(win, icon, quitEventEmitter) {
     {
       label: 'Open',
       click: () => {
-        if (win && !win.isVisible()) win.show();
+        if (win && !win.isVisible()) {
+          win.show();
+        } else {
+          win.focus();
+        }
       },
     },
     {
