@@ -1,7 +1,10 @@
 const yargs = require('yargs');
 const path = require('path');
-
-module.exports = function parseArgs() {
+/**
+ * parce command line arguments
+ * @returns parced command line arguments
+ */
+function parseArgs() {
   return yargs
     .option('url', {
       alias: 'u',
@@ -18,3 +21,5 @@ module.exports = function parseArgs() {
     .alias('help', 'h')
     .argv;
 };
+
+module.exports = parseArgs;

@@ -1,7 +1,7 @@
 {
   "name": "run-web-app",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "src/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "pack": "electron-builder --dir",
@@ -26,8 +26,7 @@
       "icon": "assets/windows-icon.ico"
     },
     "linux": {
-      "target": "AppImage",
-      "icon": "assets"
+      "target": "AppImage"
     }
   },
   "author": "",
@@ -39,7 +38,6 @@
   },
   "dependencies": {
     "axios": "^1.7.7",
-    "cheerio": "^1.0.0",
     "node-fetch": "^3.3.2",
     "yargs": "^17.7.2"
   }
