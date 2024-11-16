@@ -8,7 +8,7 @@ const path = require('path');
  * @param {EventEmitter} quitEventEmitter "quit" event emitter
  * @returns {BrowserWindow} app window
  */
-function createWindow(url, quitEventEmitter) {
+export default function createWindow(url: string, quitEventEmitter: { on: (arg0: string, arg1: (_: any) => void) => void; }) {
   let isQuitting = false;
   const win = new BrowserWindow({
     width: 1024,
@@ -32,5 +32,3 @@ function createWindow(url, quitEventEmitter) {
   });
   return win;
 };
-
-module.exports = createWindow;

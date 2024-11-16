@@ -6,7 +6,7 @@ const axios = require('axios');
  * @param {string} websiteUrl web site url
  * @returns {Promise<Electron.NativeImage | null>} web site icon
  */
-async function fetchIcon(websiteUrl) {
+export default async function fetchIcon(websiteUrl: string): Promise<Electron.NativeImage> {
   try {
     const response = await axios.get(
       `https://www.google.com/s2/favicons?domain_url=${websiteUrl.split('?')[0]}&sz=128`,
@@ -16,5 +16,3 @@ async function fetchIcon(websiteUrl) {
     return (console.error('Failed to fetch favicon:', error.message), null);
   }
 }
-
-module.exports = fetchIcon;

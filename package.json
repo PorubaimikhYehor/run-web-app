@@ -5,7 +5,24 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "eslint -c .eslintrc --ext .ts ./src",
+    "start": "npm run build && electron ./dist/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/yargs": "^17.0.33",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "node-fetch": "^3.3.2"
   },
   "build": {
     "appId": "com.yp.runner",
@@ -26,17 +43,5 @@
     "linux": {
       "target": "AppImage"
     }
-  },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "electron": "^33.2.0",
-    "electron-builder": "^25.1.8"
-  },
-  "dependencies": {
-    "axios": "^1.7.7",
-    "node-fetch": "^3.3.2",
-    "yargs": "^17.7.2"
   }
 }
