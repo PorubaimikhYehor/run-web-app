@@ -18,12 +18,10 @@
       "assets/**/*"
     ],
     "mac": {
-      "category": "public.app-category.utilities",
-      "icon": "assets/mac-icon.icns"
+      "category": "public.app-category.utilities"
     },
     "win": {
-      "target": "nsis",
-      "icon": "assets/windows-icon.ico"
+      "target": "nsis"
     },
     "linux": {
       "target": "AppImage"
