@@ -1,5 +1,5 @@
-const { nativeImage } = require('electron');
-const axios = require('axios');
+import { nativeImage } from 'electron';
+import axios from 'axios';
 
 /**
  * find web site icon in secret google archives...

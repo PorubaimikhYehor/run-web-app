@@ -1,10 +1,9 @@
-import { BrowserWindowConstructorOptions, Event } from "electron";
+import { BrowserWindow, BrowserWindowConstructorOptions, Event } from "electron";
 import { EventEmitter } from 'events';
-import { BrowserWindow } from 'electron';
 
 export class AppWindow {
   private window: BrowserWindow;
-  private isQuitting: boolean = false;
+  private isQuitting = false;
   private url: string;
   private quitEventEmitter: EventEmitter;
   /**
