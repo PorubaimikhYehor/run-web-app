@@ -21,8 +21,7 @@
     "typescript": "^5.6.3"
   },
   "dependencies": {
-    "axios": "^1.7.7",
-    "node-fetch": "^3.3.2"
+    "axios": "^1.7.7"
   },
   "build": {
     "appId": "com.yp.runner",

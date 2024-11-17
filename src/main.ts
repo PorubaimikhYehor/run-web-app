@@ -1,11 +1,10 @@
 import { app, BrowserWindow } from 'electron';
 import parseArgs from './parse-args';
-import createWindow from './create-window';
 import fetchIcon from './fetch-icon';
 import * as path from 'path';
 import { EventEmitter } from 'events';
 import { TrayManager } from './tray-manager';
-
+import { AppWindow } from './app-window';
 
 let win: BrowserWindow | null;
 
@@ -15,7 +14,7 @@ const url: string = args.url;
 
 app.whenReady().then(async () => {
     const quitEventEmitter = new EventEmitter();
-    win = createWindow(url, quitEventEmitter);
+    win = new AppWindow(url, quitEventEmitter).create();
     const icon: string | Electron.NativeImage = args.icon || (await fetchIcon(url)) || path.join(__dirname, './assets/dark.png');
     new TrayManager(win, icon, quitEventEmitter).initialize();
 });
