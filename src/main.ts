@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, NativeImage } from 'electron';
 import parseArgs from './parse-args';
 import fetchIcon from './fetch-icon';
 import * as path from 'path';
@@ -15,7 +15,7 @@ const url: string = args.url;
 app.whenReady().then(async () => {
     const quitEventEmitter = new EventEmitter();
     win = new AppWindow(url, quitEventEmitter).create();
-    const icon: string | Electron.NativeImage = args.icon || (await fetchIcon(url)) || path.join(__dirname, './assets/dark.png');
+    const icon: string | NativeImage = args.icon || (await fetchIcon(url)) || path.join(__dirname, './assets/dark.png');
     new TrayManager(win, icon, quitEventEmitter).initialize();
 });
 
